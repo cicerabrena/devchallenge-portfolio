@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333333;
+}
+
+main {
+  width: 100%;
+}
+main .container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+main .container section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1rem 2rem 1rem;
+}
+main .container section .personal {
+  display: flex;
+  flex-direction: column;
+}
+main .container section .personal img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+@media (min-width: 968px) {
+  main .container section .personal img {
+    max-width: 25%;
+  }
+}
+main .container section .personal .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .container section .personal .info .top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+main .container section .personal .info .top h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4f4f4f;
+  line-height: 1.5;
+}
+main .container section .personal .info .top small {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #828282;
+}
+main .container section .personal .info .top .contact {
+  margin: 1rem 0;
+}
+main .container section .personal .info .top .contact .item {
+  display: inline-flex;
+  margin-top: 0.5rem;
+}
+main .container section .personal .info .top .contact .item span,
+main .container section .personal .info .top .contact .item p {
+  color: #4f4f4f;
+}
+main .container section .personal .info .top .contact .item span {
+  font-size: 1.5rem;
+}
+main .container section .personal .info .top .contact .item p {
+  margin-left: 1rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+main .container section .personal .info .bottom p {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #828282;
+}
+main .container section .personal .info .bottom p:nth-child(2) {
+  display: none;
+}
+@media (min-width: 968px) {
+  main .container section .personal .info {
+    width: 72%;
+    justify-content: start;
+  }
+  main .container section .personal .info .top {
+    flex-direction: row;
+    margin-top: 0;
+  }
+  main .container section .personal .info .top .contact {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  main .container section .personal .info .top .contact .item {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  main .container section .personal .info .bottom p:nth-child(1) {
+    margin-top: 2rem;
+  }
+  main .container section .personal .info .bottom p:nth-child(2) {
+    margin-top: 1.5rem;
+    display: block;
+  }
+}
+@media (min-width: 968px) {
+  main .container section .personal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+main .container section:nth-child(1) {
+  grid-column: 1/span 2;
+}
+@media (min-width: 968px) {
+  main .container section {
+    padding: 1rem 1.5rem;
+  }
+}
+@media (min-width: 968px) {
+  main .container {
+    max-width: 1100px;
+  }
+}
+@media (min-width: 968px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+footer {
+  min-height: 20px;
+  margin: auto auto 15px auto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #828282;
+}
+footer a {
+  font-weight: 700;
+  color: #828282;
+}
+
+/*# sourceMappingURL=style.css.map */
