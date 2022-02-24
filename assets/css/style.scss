@@ -16,7 +16,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #333333;
+  color: #4f4f4f;
 }
 
 main {
@@ -24,7 +24,7 @@ main {
 
   .container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
     gap: 2rem;
     padding: 1rem;
 
@@ -60,7 +60,6 @@ main {
             h2 {
               font-size: 1.5rem;
               font-weight: 600;
-              color: #4f4f4f;
               line-height: 1.5;
             }
 
@@ -77,10 +76,6 @@ main {
                 display: inline-flex;
                 margin-top: 0.5rem;
 
-                span,
-                p {
-                  color: #4f4f4f;
-                }
                 span {
                   font-size: 1.5rem;
                 }
@@ -146,12 +141,70 @@ main {
         }
       }
 
-      &:nth-child(1) {
-        grid-column: 1 / span 2;
+      .skills {
+        h2 {
+          margin-bottom: 0.5rem;
+          font-size: 1.125rem;
+          font-weight: 700;
+        }
+
+        .skill {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 0 0.4rem 0;
+          p {
+            width: 90%;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+          .bar {
+            width: 100%;
+            height: 10px;
+            position: relative;
+            background-color: #c4c4c4;
+            border-radius: 20px;
+
+            &[data-load="60"] {
+              &::after {
+                width: 60%;
+              }
+            }
+
+            &[data-load="90"] {
+              &::after {
+                width: 90%;
+              }
+            }
+
+            &[data-load="80"] {
+              &::after {
+                width: 80%;
+              }
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              height: 10px;
+              background-color: #2f80ed;
+              border-radius: 20px;
+            }
+          }
+        }
       }
 
       @media (min-width: 968px) {
         padding: 1rem 1.5rem;
+
+        &:nth-child(1) {
+          grid-column: 1 / span 3;
+        }
+
+        &:nth-child(3) {
+          grid-column: 2 / span 2;
+          grid-row: 2 / span 3;
+        }
       }
     }
 

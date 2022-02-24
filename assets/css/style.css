@@ -13,7 +13,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #333333;
+  color: #4f4f4f;
 }
 
 main {
@@ -21,7 +21,7 @@ main {
 }
 main .container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
   gap: 2rem;
   padding: 1rem;
 }
@@ -57,7 +57,6 @@ main .container section .personal .info .top {
 main .container section .personal .info .top h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #4f4f4f;
   line-height: 1.5;
 }
 main .container section .personal .info .top small {
@@ -71,10 +70,6 @@ main .container section .personal .info .top .contact {
 main .container section .personal .info .top .contact .item {
   display: inline-flex;
   margin-top: 0.5rem;
-}
-main .container section .personal .info .top .contact .item span,
-main .container section .personal .info .top .contact .item p {
-  color: #4f4f4f;
 }
 main .container section .personal .info .top .contact .item span {
   font-size: 1.5rem;
@@ -125,12 +120,55 @@ main .container section .personal .info .bottom p:nth-child(2) {
     justify-content: space-between;
   }
 }
-main .container section:nth-child(1) {
-  grid-column: 1/span 2;
+main .container section .skills h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+main .container section .skills .skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 0.4rem 0;
+}
+main .container section .skills .skill p {
+  width: 90%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+main .container section .skills .skill .bar {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+main .container section .skills .skill .bar[data-load="60"]::after {
+  width: 60%;
+}
+main .container section .skills .skill .bar[data-load="90"]::after {
+  width: 90%;
+}
+main .container section .skills .skill .bar[data-load="80"]::after {
+  width: 80%;
+}
+main .container section .skills .skill .bar::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  background-color: #2f80ed;
+  border-radius: 20px;
 }
 @media (min-width: 968px) {
   main .container section {
     padding: 1rem 1.5rem;
+  }
+  main .container section:nth-child(1) {
+    grid-column: 1/span 3;
+  }
+  main .container section:nth-child(3) {
+    grid-column: 2/span 2;
+    grid-row: 2/span 3;
   }
 }
 @media (min-width: 968px) {
