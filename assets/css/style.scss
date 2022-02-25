@@ -29,7 +29,7 @@ body {
   background-color: #f2f2f2;
 
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   color: var(--color-gray);
 }
@@ -208,6 +208,12 @@ main {
 
             .buttons {
               margin-top: 0;
+
+              a {
+                span {
+                  padding-top: 0.3rem;
+                }
+              }
             }
           }
 
@@ -547,6 +553,46 @@ main {
 
               &:nth-child(2) {
                 grid-column: 2 / span 2;
+              }
+            }
+          }
+        }
+
+        .pagination {
+          width: 100%;
+          display: flex;
+          justify-content: end;
+
+          span {
+            width: 35px;
+            height: 35px;
+            margin-right: 0.6rem;
+            padding: 0.3rem 0.3rem;
+            border: 1px solid var(--color-orange-600);
+            border-radius: 5px;
+            color: var(--color-orange-500);
+            cursor: pointer;
+          }
+
+          ul {
+            display: flex;
+            list-style: none;
+
+            li {
+              width: 35px;
+              height: 35px;
+              margin-right: 0.6rem;
+              padding: 0.4rem;
+              border: 1px solid var(--color-orange-600);
+              border-radius: 5px;
+              font-size: 0.875rem;
+              text-align: center;
+              color: var(--color-orange-500);
+              cursor: pointer;
+
+              &.active {
+                background-color: var(--color-orange-600);
+                color: white;
               }
             }
           }
