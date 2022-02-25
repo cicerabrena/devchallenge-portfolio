@@ -1,4 +1,4 @@
-<h1 align="center">Edie homepage</h1>
+<h1 align="center">Portfolio</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -6,11 +6,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://cicerabrena.github.io/devchallenge-edie-homepage/" target="_blank">
+    <a href="https://cicerabrena.github.io/devchallenge-portfolio/" target="_blank">
       Demo
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/xobQBuf8zWWmiYMIAZe0">
+    <a href="https://devchallenges.io/challenges/5ZnOYsSXM24JWnCsNFlt">
       Challenge
     </a>
   </h3>

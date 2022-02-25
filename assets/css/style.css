@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 :root {
-  --color-primary: #2f80ed;
+  --color-blue-600: #2f80ed;
   --color-gray: #4f4f4f;
+  --color-gray-500: #828282;
   --color-orange-100: #ffb485;
   --color-orange-200: #ffa770;
   --color-orange-300: #ffa770;
@@ -19,11 +20,22 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-gray);
+}
+
 button,
 a:not(.footer) {
   height: 35px;
   appearance: none;
-  display: inline-block;
+  display: inline-flex;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
   background-color: transparent;
@@ -46,17 +58,6 @@ a:not(.footer) {
   text-decoration: none;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-orange-500);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--color-gray);
-}
-
 main {
   width: 100%;
 }
@@ -76,12 +77,13 @@ main .container section {
 main .container section .personal {
   display: flex;
   flex-direction: column;
+  align-items: start;
 }
 main .container section .personal img {
   max-width: 100%;
   border-radius: 10px;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section .personal img {
     max-width: 25%;
   }
@@ -106,7 +108,7 @@ main .container section .personal .info .top h2 {
 main .container section .personal .info .top small {
   font-weight: 500;
   font-size: 1.125rem;
-  color: #828282;
+  color: var(--color-gray-500);
 }
 main .container section .personal .info .top .contact {
   margin: 1rem 0;
@@ -130,16 +132,19 @@ main .container section .personal .info .bottom p {
   margin-top: 0.5rem;
   font-size: 1.125rem;
   font-weight: 500;
-  color: #828282;
+  color: var(--color-gray-500);
 }
 main .container section .personal .info .bottom p:nth-child(2) {
   display: none;
 }
 main .container section .personal .info .buttons {
+  display: flex;
+  justify-content: end;
   text-align: right;
   margin-top: 2rem;
 }
 main .container section .personal .info .buttons a {
+  align-items: center;
   background-color: var(--color-orange-700);
   border-color: var(--color-orange-3700);
   border-radius: 5px;
@@ -147,11 +152,16 @@ main .container section .personal .info .buttons a {
 }
 main .container section .personal .info .buttons a span {
   padding-right: 0.3rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
-@media (min-width: 968px) {
+@media (max-width: 425px) {
+  main .container section .personal .info .buttons a {
+    font-size: 0.725rem;
+  }
+}
+@media (min-width: 768px) {
   main .container section .personal .info {
-    width: 72%;
+    margin-left: 2rem;
   }
   main .container section .personal .info .top {
     flex-direction: row;
@@ -177,10 +187,20 @@ main .container section .personal .info .buttons a span {
     margin-top: 0;
   }
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) and (max-width: 968px) {
+  main .container section .personal .info .buttons {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px) {
   main .container section .personal {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+@media (min-width: 968px) {
+  main .container section .personal {
+    align-items: stretch;
   }
 }
 main .container section .skills h2 {
@@ -236,7 +256,7 @@ main .container section .experiences .experience .info small {
   margin: 0.5rem 0;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #828282;
+  color: var(--color-gray-500);
 }
 main .container section .experiences .experience .info p {
   margin-bottom: 2rem;
@@ -246,8 +266,17 @@ main .container section .experiences .experience .info p {
 }
 main .container section .experiences .experience .info .description {
   margin-bottom: 2rem;
-  color: #828282;
+  color: var(--color-gray-500);
   font-weight: 500;
+}
+@media (min-width: 768px) and (max-width: 968px) {
+  main .container section .experiences .experience img {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+  main .container section .experiences .experience .info {
+    margin-top: 1rem;
+  }
 }
 @media (min-width: 968px) {
   main .container section .experiences .experience {
@@ -299,7 +328,7 @@ main .container section .hobbies .hobbie .info .description {
   margin-top: 0.6rem;
   font-weight: 500;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section .hobbies .hobbie .info .description {
     font-size: 0.875rem;
   }
@@ -323,11 +352,11 @@ main .container section:nth-child(3) .header .tags {
   margin-top: 1rem;
 }
 main .container section:nth-child(3) .header .tags button.selected {
-  background-color: var(--color-orange-500);
-  border-color: var(--color-orange-500);
+  background-color: var(--color-orange-600);
+  border-color: var(--color-orange-600);
   color: white;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section:nth-child(3) .header .tags {
     display: block;
   }
@@ -342,7 +371,7 @@ main .container section:nth-child(3) .projects .project {
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
   column-gap: 1rem;
   margin-bottom: 2rem;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 1rem;
   background-color: white;
   border-radius: 10px;
   transition: height 0.2s ease-in, margin-bottom 0.2s ease-in, padding 0.2s ease-in, opacity 0.3s ease-in;
@@ -358,14 +387,13 @@ main .container section:nth-child(3) .projects .project .image img {
   border: 2px solid var(--color-orange-100);
   border-radius: 10px;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section:nth-child(3) .projects .project .image {
     grid-column: auto;
   }
 }
 main .container section:nth-child(3) .projects .project .content {
   margin-top: 1rem;
-  margin-left: 1rem;
   grid-column: 1/span 2;
 }
 main .container section:nth-child(3) .projects .project .content h2 {
@@ -378,7 +406,7 @@ main .container section:nth-child(3) .projects .project .content .tags {
 }
 main .container section:nth-child(3) .projects .project .content .tags .tag {
   padding: 0.2rem 1rem;
-  background: var(--color-orange-500);
+  background: var(--color-orange-600);
   color: white;
   border-radius: 20px;
   font-size: 0.857rem;
@@ -394,7 +422,7 @@ main .container section:nth-child(3) .projects .project .content .description h2
 main .container section:nth-child(3) .projects .project .content .description p {
   font-size: 1rem;
   font-weight: 500;
-  color: #828282;
+  color: var(--color-gray-500);
 }
 main .container section:nth-child(3) .projects .project .content .links a {
   width: 120px;
@@ -404,19 +432,21 @@ main .container section:nth-child(3) .projects .project .content .links a {
   font-weight: 500;
   font-size: 1.125rem;
   text-align: center;
-  border: 1px solid var(--color-orange-500);
-  color: var(--color-orange-500);
+  border: 1px solid var(--color-orange-600);
+  color: var(--color-orange-600);
 }
 main .container section:nth-child(3) .projects .project .content .links a:hover {
   color: white;
 }
 main .container section:nth-child(3) .projects .project .content .links a:nth-child(1) {
-  background-color: var(--color-orange-500);
+  background-color: var(--color-orange-600);
   color: white;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section:nth-child(3) .projects .project .content {
     grid-column: 2/span 2;
+    margin-top: 0;
+    margin-left: 1rem;
   }
 }
 main .container section:nth-child(3) .projects .project.hide {
@@ -430,7 +460,7 @@ main .container section:nth-child(3) .projects .project.hide {
 main .container section:nth-child(3) .projects .project:nth-child(2) {
   grid-column: 1/span 2;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section:nth-child(3) .projects .project {
     grid-template-columns: repeat(3, minmax(min-content, 1fr));
   }
@@ -452,7 +482,7 @@ main .container section:nth-child(3) .empty.show {
   padding: 1rem;
   transition: opacity 0.3s ease-in;
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container section {
     grid-column: auto;
     padding: 1rem 1.5rem;
@@ -465,12 +495,12 @@ main .container section:nth-child(3) .empty.show {
     grid-row: 2/span 3;
   }
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main .container {
     max-width: 1200px;
   }
 }
-@media (min-width: 968px) {
+@media (min-width: 768px) {
   main {
     display: flex;
     justify-content: center;
