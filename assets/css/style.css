@@ -68,11 +68,12 @@ main .container {
   padding: 1rem;
 }
 main .container section {
+  --box-shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;
   grid-column: 1/span 3;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 1rem 1rem 2rem 1rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: var(--box-shadow);
 }
 main .container section .personal {
   display: flex;
@@ -339,11 +340,13 @@ main .container section .hobbies .hobbie .info .description {
 main .container section:nth-child(3) {
   padding: 0;
   background-color: transparent;
+  box-shadow: none;
 }
 main .container section:nth-child(3) .header {
   padding: 1rem 1.5rem;
   background-color: white;
   border-radius: 10px;
+  box-shadow: var(--box-shadow);
 }
 main .container section:nth-child(3) .header p {
   font-size: 1.125rem;
@@ -367,6 +370,7 @@ main .container section:nth-child(3) .header .tags button.selected {
 main .container section:nth-child(3) .projects {
   width: 100%;
   margin-top: 2rem;
+  box-shadow: var(--box-shadow);
 }
 main .container section:nth-child(3) .projects .project {
   opacity: 1;
@@ -475,6 +479,7 @@ main .container section:nth-child(3) .pagination {
   width: 100%;
   display: flex;
   justify-content: end;
+  box-shadow: var(--box-shadow);
 }
 main .container section:nth-child(3) .pagination span {
   width: 35px;
@@ -512,6 +517,7 @@ main .container section:nth-child(3) .empty {
   background-color: #ffffff;
   border-radius: 10px;
   font-weight: 500;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: opacity 0.3s ease-out;
 }
 main .container section:nth-child(3) .empty.show {
