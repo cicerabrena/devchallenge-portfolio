@@ -55,7 +55,7 @@
           <div class="skill">
             <p>CSS</p>
             <div class="bar" data-load="90"></div>
-          </div> 
+          </div>
           <div class="skill">
             <p>Vue</p>
             <div class="bar" data-load="60"></div>
@@ -71,9 +71,84 @@
         </div>
       </section>
       <section>
-        <div class="projects">
-          
+        <div class="header">
+          <p>Projects (3)</p>
+          <div class="tags">
+            <button class="btn selected">All</button>
+            <button class="btn">Responsive</button>
+            <button class="btn">React</button>
+            <button class="btn">NextJS</button>
+          </div>
         </div>
+        <div class="projects">
+          <div class="project">
+            <div class="image">
+              <img src="https://via.placeholder.com/350?text=Project-1" alt="Project">
+            </div>
+            <div class="content">
+              <div class="tags">
+                <div class="tag">#HTML</div>
+                <div class="tag">#CSS</div>
+                <div class="tag">#Responsive</div>
+              </div>
+              <div class="description">
+                <h2>Checkout page</h2>
+                <p>In this project I work with HTML and CSS to create a responsive page. This page is similiar with a
+                  page. This design is from devChallenge.io</p>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank">Demo</a>
+                <a href="#" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <img src="https://via.placeholder.com/350?text=Project-3" alt="Project">
+            </div>
+            <div class="content">
+              <div class="tags">
+                <div class="tag">#HTML</div>
+                <div class="tag">#CSS</div>
+                <div class="tag">#Responsive</div>
+              </div>
+              <div class="description">
+                <h2>Checkout page</h2>
+                <p>In this project I work with HTML and CSS to create a responsive page. This page is similiar with a
+                  page. This design is from devChallenge.io</p>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank">Demo</a>
+                <a href="#" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <img src="https://via.placeholder.com/350?text=Project-2" alt="Project">
+            </div>
+            <div class="content">
+              <div class="tags">
+                <div class="tag">#HTML</div>
+                <div class="tag">#CSS</div>
+                <div class="tag">#Responsive</div>
+              </div>
+              <div class="description">
+                <h2>Checkout page</h2>
+                <p>In this project I work with HTML and CSS to create a responsive page. This page is similiar with a
+                  page. This design is from devChallenge.io</p>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank">Demo</a>
+                <a href="#" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="empty">
+          No projects founded for the selected tag.
+        </div>
+        <div class="pagination"></div>
       </section>
       <section>
         <div class="experiences">
@@ -84,7 +159,8 @@
               <small>Apr 2019 - Current</small>
               <p>Full-stack develop</p>
               <div class="description">
-                Current working on projects with HTML, CSS and Javascript on the frontend and with PHP/Laravel on the backend.
+                Current working on projects with HTML, CSS and Javascript on the frontend and with PHP/Laravel on the
+                backend.
               </div>
               <a href="#" target="_blank">Go to site</a>
             </div>
@@ -95,11 +171,14 @@
         <div class="hobbies">
           <h2>Hobbies</h2>
           <div class="hobbie">
-            <img src="" alt="Re9 Agência">
+            <div>
+              <img src="" alt="Re9 Agência">
+            </div>
             <div class="info">
               <p>Full-stack develop</p>
               <div class="description">
-                Current working on projects with HTML, CSS and Javascript on the frontend and with PHP/Laravel on the backend.
+                Current working on projects with HTML, CSS and Javascript on the frontend and with PHP/Laravel on the
+                backend.
               </div>
             </div>
           </div>
@@ -108,8 +187,56 @@
     </div>
   </main>
   <footer>
-    created by <a href="https://github.com/cicerabrena">cicerabrena</a> - devChallenges.io
+    created by <a href="https://github.com/cicerabrena" class="footer">cicerabrena</a> - devChallenges.io
   </footer>
+
+  <script>
+    const btnTags = document.querySelectorAll('.tags .btn');
+    btnTags.forEach(btn => btn.addEventListener('click', filterProjects));
+
+    const projects = document.querySelectorAll('.projects .project');
+
+    const emptyTag = document.querySelector('.empty');
+
+    function filterProjects(e) {
+      const button = e.currentTarget;
+      const selectedTag = button.textContent.toLowerCase();
+
+      setSelectedButton(button, selectedTag);
+
+      const projectsHidden = Array.from(projects).map(project => {
+
+        if (selectedTag == "all") {
+          project.classList.remove('hide');
+          return project;
+        }
+
+        const hasTag = Array.from(project.querySelectorAll('.tags .tag'))
+          .map(tag => {
+            const newTag = tag.textContent.slice(1, tag.textContent.length).toLowerCase();
+            return newTag;
+          })
+          .find(tag => tag == selectedTag);
+
+        project.classList.toggle('hide', hasTag == undefined);
+
+        return project;
+
+      }).filter(project => !project.classList.contains('hide'));
+
+      emptyTag.classList.toggle('show', projectsHidden == 0);
+
+    }
+
+    function setSelectedButton(button, selectedTag) {
+      button.classList.add('selected');
+      btnTags.forEach(btn => {
+        if ((btn.textContent.toLowerCase() != selectedTag) && btn.classList.contains('selected')) {
+          btn.classList.remove('selected')
+        }
+      })
+    }
+  </script>
 </body>
 
 </html>
